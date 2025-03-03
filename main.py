@@ -4,9 +4,16 @@ import telebot
 from binance.client import Client
 
 # Конфигурация
-BINANCE_API_KEY = "6GgTf3eDcPs3Zle1PJzRSfgt6ay4ynYBnCDncJxF6Hu7bHjdHIBASpsexfXsyCX0"
-BINANCE_SECRET_KEY = "gaSPV8vLcVu7nmJL2jCH6NQiMh7h5nU3kt5p8QPkTOyNp0FCkZ4oi9ecldXrwUjc"
-TELEGRAM_BOT_TOKEN = "8034186947:AAFljqSGjx49tiN4D2fP8XN7au6IofOZDFg"
+import os
+
+from dotenv import load_dotenv
+
+# Загружаем переменные из .env
+load_dotenv()
+
+BINANCE_API_KEY = os.getenv("BINANCE_API_KEY")
+BINANCE_SECRET_KEY = os.getenv("BINANCE_SECRET_KEY")
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = "977501740"
 
 # Пороговое значение изменения цены в %
